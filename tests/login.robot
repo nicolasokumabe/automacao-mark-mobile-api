@@ -14,4 +14,13 @@ Deve logar com sucesso
     ...    autoGrantPermissions=true
     ...    app=${EXECDIR}/apps/markx.apk
 
-    Sleep    10
+    Wait Until Page Contains    Endereço IP da Api    10
+
+    Input Text    xpath=//*[@resource-id="apiIp"]     192.168.15.124
+    # Input Text    class name=android.widget.EditText    192.168.15.124
+
+    Click Element    xpath=//*[@resource-id="signInButton"]
+
+    Wait Until Page Contains    Minhas tarefas    5
+
+    Close Application
